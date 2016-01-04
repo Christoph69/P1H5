@@ -33,8 +33,7 @@ rational smallestCommonMultiple(rational zahl) {
 
 // Vorzeichenprüfung
 rational signTest(rational zahl) {
-  if (((zahl.denominator < 0) && (zahl.numerator < 0)) ||
-      ((zahl.denominator < 0) && (zahl.numerator >= 0))) {
+  if (zahl.denominator < 0){
     zahl.numerator   *= -1;
     zahl.denominator *= -1;
   }
