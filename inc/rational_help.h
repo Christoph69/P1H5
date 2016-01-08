@@ -8,10 +8,10 @@
 #include "../inc/rational.h" // für struct rational
 
 // Betrag bilden
-long     absolut(long);
+long absolut(long);
 
 // größter gemeinsamer Teiler (ggT)
-long     ggT(rational);
+long ggT(rational);
 
 // kleinstes gemeinsames Vielfache (kgV)
 rational smallestCommonMultiple(rational);
@@ -21,6 +21,10 @@ rational signTest(rational);
 
 // zweite Potenz einer rationalen Zahl
 rational exponent2(rational);
+
+// bringt zwei rationale Zahlen auf den gleichen Hauptnenner
+void same_denominator(rational *,
+                      rational *);
 
 
 #endif /* RATIONAL_HELP_H */

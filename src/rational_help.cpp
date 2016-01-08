@@ -33,7 +33,7 @@ rational smallestCommonMultiple(rational zahl) {
 
 // Vorzeichenprüfung
 rational signTest(rational zahl) {
-  if (zahl.denominator < 0){
+  if (zahl.denominator < 0) {
     zahl.numerator   *= -1;
     zahl.denominator *= -1;
   }
@@ -44,4 +44,18 @@ rational signTest(rational zahl) {
 rational exponent2(rational zahl) {
   zahl = mul(zahl, zahl);
   return zahl;
+}
+
+// bringt zwei rationale Zahlen auf den gleichen Hauptnenner
+void same_denominator(rational *zahl1, rational *zahl2) {
+  // Hauptnenner bilden um die Zahlen vergleichen zu können
+  long backup_denominator1 = zahl1->denominator,
+       backup_denominator2 = zahl2->denominator;
+
+  zahl1->denominator *= backup_denominator2;
+  zahl2->denominator *= backup_denominator1;
+
+  // Zähler der beiden zu vergleichenden Zahlen anpassen
+  zahl1->numerator *= backup_denominator2;
+  zahl2->numerator *= backup_denominator1;
 }

@@ -1,4 +1,6 @@
 /* Header für das berechnen des mittleren Fehlerquadrate */
+#ifndef RATIONAL_ARR_H
+#define RATIONAL_ARR_H
 #include "../inc/rational.h"
 
 // Funktion die das aritmetische Mittel aus einem Array von rationalen Zahlen
@@ -12,3 +14,5 @@ rational rational_average(rational *,    // Array aus 'struct rational' - Werten
 // zurückgibt.
 rational average_mistake(rational *,    // Array aus 'struct rational' - Werten
                          unsigned int); // Anzahl der Elemente im Array
+// test test test
+#endif /* RATIONAL_ARR_H */

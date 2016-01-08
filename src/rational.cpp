@@ -52,9 +52,54 @@ double as_double(rational zahl) {
   return ergebnis = zaehler / nenner;
 }
 
+/////////////////////////////////////////////////////
+
 // Funktionen für den Vergleich von rationalen Zahlen
 
-// Gleichheit
-bool rational_equal(rational, rational) {
-  return true;
+/////////////////////////////////////////////////////
+
+// Vergleich auf Gleichheit
+bool rational_equal(rational zahl1, rational zahl2) {
+  // Hauptnenner bilden mithilfe der Hilfsfunktions
+  same_denominator(&zahl1, &zahl2);
+
+  // Vergleich auf Gleichheit
+  if (zahl1.numerator == zahl2.numerator) return true;
+  else return false;
+}
+
+// Vergleich auf Ungleichheit
+bool rational_unequal(rational zahl1, rational zahl2) {
+  if (rational_equal(zahl1, zahl2)) return false;
+  else return true;
+}
+
+// Vergleich auf kleiner als
+bool rational_less(rational zahl1, rational zahl2) {
+  same_denominator(&zahl1, &zahl2);
+
+  // Vergleich auf zahl1 kleiner als zahl2
+  if (zahl1.numerator < zahl2.numerator) return true;
+  else return false;
+}
+
+// Vergleich auf kleiner als oder gleich
+bool rational_less_or_equal(rational zahl1, rational zahl2) {
+  if (rational_less(zahl1, zahl2) || rational_equal(zahl1, zahl2)) return true;
+  else return false;
+}
+
+// Vergleich auf größer als
+bool rational_greater(rational zahl1, rational zahl2) {
+  same_denominator(&zahl1, &zahl2);
+
+  // Vergleich auf zahl1 größer als zahl2
+  if (zahl1.numerator > zahl2.numerator) return true;
+  else return false;
+}
+
+// Vergleich auf größer oder gleich als
+bool rational_greater_or_equal(rational zahl1, rational zahl2) {
+  if (rational_equal(zahl1, zahl2) || rational_greater(zahl1, zahl2)) return true;
+  else return false;
 }
